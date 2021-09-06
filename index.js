@@ -19,7 +19,11 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 22;
+function isVoter(votingAge){
+  console.log(votingAge >= 18);
+}
+isVoter(votingAge);
 
 
 /*
@@ -32,8 +36,17 @@ Do the following:
 
    HINT: no function required
 */
+let weather = "warm";
+let beverage = "chilled rose";
 
+if (weather === "warm"){
+  beverage = "chilled rose";
+}
+else{
+  beverage = "red wine";
+}
 
+console.log(`since it's ${weather} out, let's have a glass of ${beverage} with dinner`)
 
 
 
@@ -48,7 +61,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let strParty = "1999";
+let intNum = Number(strParty);
+console.log(intNum);
 
 
 /*
@@ -59,9 +74,10 @@ Do the following:
    2. Receive the parameters: a and b
    3. Multiply a and b and return the answer
 */
+multiply (2, 5);
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return (a * b);
 }
 
 
@@ -75,9 +91,10 @@ Do the following:
  2. Use the received value to calculate the age in dog years (1 human year is equal to 7 dog years)
  3. Return the newly calculated age
 */
+dogYears(12);
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(age){
+  return (age/7);
 }
 
 
