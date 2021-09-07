@@ -145,10 +145,10 @@ function hungryDog(lbs, age){
     if ((age >= (2/12)) && (age <= (4/12))){
       return (lbs*.1);
     }
-    else if (age <= (7/12)){
+    else if (age < (.583)){
       return (lbs*.05);
     }
-    else if (age < (1)){
+    else if (age >= (.583)){
       return (lbs*.04);
     }
   }
@@ -248,7 +248,7 @@ Using the miles function below do the following:
 */
 
 function miles(kms){
-  return (kms/1.61);
+  return (kms*.621371);
 }
 
 
@@ -279,7 +279,7 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(num){
   for (let i=num; i>0; i--){
-    console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${(i-1)} bottles of soda on the wall`);
+    return(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${(i-1)} bottles of soda on the wall`);
   }
 }
 
