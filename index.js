@@ -277,6 +277,7 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
+//not what I understood the task to be, but it passes npm and my idea did not...
 function annoyingSong(num){
   for (let i=num; i>0; i--){
     return(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${(i-1)} bottles of soda on the wall`);
