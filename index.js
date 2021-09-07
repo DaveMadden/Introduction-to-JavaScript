@@ -333,8 +333,37 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+vowelCounter("CHEESE");
+
+function vowelCounter(str) {
+  const lower = str.toLowerCase();//case sensitive, so make lower
+
+  const chars = lower.split(''); //splits word into an array of characters
+
+  let count = 0; //for counting vowels
+
+  for (let i=0; i< str.length; i++){ //step through the array and check if is vowel
+    //console.log(chars[i]);
+    if (chars[i] === "a"){
+      count++;                      //if a vowel, increment  the count
+    }
+    else if (chars[i] === "e"){
+      count ++;
+    }
+    else if (chars[i] === "i"){
+      count ++;
+    }
+    else if (chars[i] === "o"){
+      count ++;
+    }
+    else if (chars[i] === "u"){
+      count ++;
+    }
+    else if (chars[i] === "y"){
+      count ++;
+    }
+  }
+return count;
 }
 
 
