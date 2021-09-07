@@ -94,10 +94,10 @@ Do the following:
 dogYears(12);
 
 function dogYears(age){
-  return (age/7);
+  let dogYears = age*7;
+  console.log(`${age} human years is ${dogYears} dog years.`);
+  return dogYears;
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -126,8 +126,32 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(lbs, age){
+  if (age >= 1){ //adult dogs
+    if (lbs <= 5){ //up to 5lbs
+      return (0.05*lbs); //5% of body weight
+    }
+    else if (lbs <=10){
+      return (0.04*lbs);
+    }
+    else if (lbs <=15){
+      return (0.03*lbs);
+    }
+    else {
+      return (0.02*lbs);
+    }
+  }
+  else{ //puppies
+    if ((age >= (2/12)) && (age <= (4/12))){
+      return (lbs*.1);
+    }
+    else if (age <= (7/12)){
+      return (lbs*.05);
+    }
+    else if (age < (1)){
+      return (lbs*.04);
+    }
+  }
 }
 
 
@@ -153,8 +177,61 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let userPick = "rock"; //setting this here for now, but should come from console input probably
+
+const msgTie = "it's a tie";
+const msgWin = "you win!";
+const msgLose = "you lose!"
+
+game(userPick, compPick());//actually calling the game function
+
+function compPick(){ //returns "r, p, s"
+  let pick = Math.random() *3;
+  if (pick <=1){
+    return "rock";
+  }
+  else if (pick <=2){
+    return "paper";
+  }
+  else{
+    return "scissors";
+  }
+}
+
 function game(user, computer){
-  /*add your code here*/
+  if (user === "rock"){          //USER ROCK
+    if (computer === "rock"){
+      return msgTie;
+    }
+    else if (computer === "paper"){
+      return msgLose;
+    }
+    else {
+      return msgWin;
+    }
+  }
+  else if (user === "paper"){   //USER PAPER
+    if (computer === "rock"){
+      return msgWin;
+    }
+    else if (computer === "paper"){
+      return msgTie;
+    }
+    else {
+      return msgLose;
+    }
+  }
+  else {                     //USER SCISSORS
+    if (computer === "rock"){
+      return msgLose;
+    }
+    else if (computer === "paper"){
+      return msgWin;
+    }
+    else {
+      return msgTie;
+    }
+  }
 }
 
 
@@ -166,12 +243,12 @@ function game(user, computer){
 /*
 Using the miles function below do the following:
 1. Receive a number of kilometers
-2. Convert the number of kiolmeters received to miles
+2. Convert the number of kilometers received to miles
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kms){
+  return (kms/1.61);
 }
 
 
@@ -184,8 +261,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return (cm/30.48);
 }
 
 
@@ -200,8 +277,10 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(num){
+  for (let i=num; i>0; i--){
+    console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${(i-1)} bottles of soda on the wall`);
+  }
 }
 
 
@@ -220,8 +299,22 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+  if (score >= 90){
+    return "you got an A";
+  }
+  else if (score >= 80){
+    return "you got a B";
+  }
+  else if (score >= 70){
+    return "you got a C";
+  }
+  else if (score >= 60){
+    return "you got a D";
+  }
+  else {
+    return "you got an F";
+  }
 }
 
 
